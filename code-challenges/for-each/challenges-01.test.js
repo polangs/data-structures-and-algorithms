@@ -1,9 +1,5 @@
 'use strict';
 
-import { arrayExpression } from "@babel/types";
-
-// import { ENGINE_METHOD_ALL } from "constants";
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -17,10 +13,8 @@ const greeting = (word) => {
   return word.toUpperCase();
 };
 
-const speaker = (message, callback) => {
-  // Solution code here...
-  return callback.toUpperCase();
-};
+const speaker = (message, callback) => callback(message);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -167,21 +161,21 @@ describe('Testing challenge 3', () => {
   });
 });
 
-Xdescribe('Testing challenge 4', () => {
+xdescribe('Testing challenge 4', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
   });
 });
 
-Xdescribe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toStrictEqual(7);
   });
 });
 
-Xdescribe('Testing challenge 6', () => {
+xdescribe('Testing challenge 6', () => {
 ``
   test('It should only add the available items to the list', () => {
     expect(createList(inventory)).toStrictEqual(['apples', 'pears', 'bananas']);
@@ -189,7 +183,7 @@ Xdescribe('Testing challenge 6', () => {
   });
 });
 
-Xdescribe('Testing challenge 7', () => {
+xdescribe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
@@ -197,4 +191,4 @@ Xdescribe('Testing challenge 7', () => {
     expect(fizzbuzz(inputs).length).toStrictEqual(16);
   });
 });
-testing
+
