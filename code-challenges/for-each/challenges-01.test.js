@@ -57,11 +57,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  // Solution code here...
+  if (num % 3 === 2){
+    arr.pop();
+  }
 };
 
 const removeElements = (arr, callback) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++){
+    callback(arr[i], arr);
+  }
 };
 
 
@@ -72,7 +76,9 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
+  // arr.forEach(item => callback(item,arr));
+  arr.forEach((item) => callback(item,arr));
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,14 +86,19 @@ CHALLENGE 5
 
 Write a function named removeWithAnon that produces the same output as challenges 3 and 4.
 
-This function should use forEach again, but rather than taking in a callback as an argument, define an anonymous function as the argument to forEach.
+This function should use forEach again, but rather than taking in a callback as an argument, define an anonymous function as the argument
 
 This anonymous function should accept up to three arguments: the element, the index, and the array.
 ------------------------------------------------------------------------------------------------ */
 
-const removeWithAnon = (arr) => {
-  // Solution code here...
-};
+const removeWithAnon = (outerArray) => {
+  outerArray.forEach((element, index, arr) => {
+    if ((element % 3) === 2){
+      arr.pop();
+    }
+  });
+  return outerArray;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -158,29 +169,29 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
-``
+describe('Testing challenge 6', () => {
+
   test('It should only add the available items to the list', () => {
     expect(createList(inventory)).toStrictEqual(['apples', 'pears', 'bananas']);
     expect(createList(inventory).length).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
