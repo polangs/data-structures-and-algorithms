@@ -33,14 +33,16 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
-  numberForArray: arr[0];
-  valueForArray: value[0];
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i =0; i < times; i++){
+    callback(arr,num)
+  }
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -62,11 +64,6 @@ const removeElements = (arr, callback) => {
   // Solution code here...
 };
 
-describe('Testing challenge 1', () => {
-  test('It should return the message with all uppercase characters', () => {
-    expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
-  });
-});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
