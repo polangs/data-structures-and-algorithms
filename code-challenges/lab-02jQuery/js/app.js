@@ -35,24 +35,33 @@ function displayPage(photos) {
 
   });
 }
+//function to get keywords
+//forEach-keywords
+//how to access keywords
+function keywordDropdown (photos){
+
+    photos.forEach(photo => {
+      const $newKeyword = $ ('#photo-template').clone();
+
+    })
 
 
-function attachListeners () {
-  $('input').on('change', event => {
-    const $keyword= $(event.target);
-    const choice = $choice.val();
+// function attachListeners () {
+//   $('input').on('change', event => {
+//     const $keyword= $(event.target);
+//     const choice = $choice.val();
 
-    if (type === 'all') {
+//     if (type === 'all') {
 
-      $('li').not('#photo-template').show();
-    } else if (type === 'keyword') {
-      $('li').hide();
-      $('li[data-type="keyword"]').show();
-    } else {
-      $('li').hide();
-      $('li[data-type="sweet"]').show();
-    }
-  });
-}
+//       $('li').not('#photo-template').show();
+//     } else if (type === 'keyword') {
+//       $('li').hide();
+//       $('li[data-type="keyword"]').show();
+//     } else {
+//       $('li').hide();
+//       $('li[data-type="sweet"]').show();
+//     }
+//   });
+// }
 
 $(startApp);
