@@ -31,19 +31,17 @@ function displayPage(photos) {
     // $newPhoto.attr('data-type', photo.keyword);
 
     $('main').append($newPhoto);
-    // console.log('photo',photo.title);
-
   });
 }
 //function to get keywords
 //forEach-keywords
 //how to access keywords
-function keywordDropdown (photos){
-
-    photos.forEach(photo => {
-      const $newKeyword = $ ('#photo-template').clone();
-
-    })
+function dropdownKeyword (photos){
+  let newKeyword = [];
+  (
+    const url = $('#photo-template')
+      $.getJson(url, function())
+    
 
 
 // function attachListeners () {
