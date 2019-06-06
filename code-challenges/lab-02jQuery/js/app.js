@@ -31,28 +31,35 @@ function displayPage(photos) {
     // $newPhoto.attr('data-type', photo.keyword);
 
     $('main').append($newPhoto);
-    // console.log('photo',photo.title);
-
   });
 }
+//function to get keywords
+//forEach-keywords
+//how to access keywords
+function dropdownKeyword (photos){
+  let newKeyword = [];
+  (
+    const url = $('#photo-template')
+      $.getJson(url, function())
+    
 
 
-function attachListeners () {
-  $('input').on('change', event => {
-    const $keyword= $(event.target);
-    const choice = $choice.val();
+// function attachListeners () {
+//   $('input').on('change', event => {
+//     const $keyword= $(event.target);
+//     const choice = $choice.val();
 
-    if (type === 'all') {
+//     if (type === 'all') {
 
-      $('li').not('#photo-template').show();
-    } else if (type === 'keyword') {
-      $('li').hide();
-      $('li[data-type="keyword"]').show();
-    } else {
-      $('li').hide();
-      $('li[data-type="sweet"]').show();
-    }
-  });
-}
+//       $('li').not('#photo-template').show();
+//     } else if (type === 'keyword') {
+//       $('li').hide();
+//       $('li[data-type="keyword"]').show();
+//     } else {
+//       $('li').hide();
+//       $('li[data-type="sweet"]').show();
+//     }
+//   });
+// }
 
 $(startApp);
