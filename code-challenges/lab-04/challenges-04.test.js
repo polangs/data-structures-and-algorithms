@@ -46,8 +46,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-};
+  // let validator = /\b(\w*[^A-J]\w*)\b/g;
+  let arrayOne = [];
+  let validator = /^[A-J]/
+  arr.forEach(element => {
+    if (validator.test(element)){
+      arrayOne.push(element)
+    }
+  });
+  return arrayOne;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -62,7 +70,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let validator = /^[Oo]ct(ober)?$/g
+  return validator.test(input)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -149,7 +158,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
@@ -165,7 +174,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should match any of the acceptable inputs', () => {
     expect(matchMonth('Oct')).toBeTruthy();
     expect(matchMonth('oct')).toBeTruthy();
