@@ -61,7 +61,6 @@ const removeOne = (num, arr) => {
     arr.pop();
   }
 };
-
 const removeElements = (arr, callback) => {
   for (let i = 0; i < arr.length; i++){
     callback(arr[i], arr);
@@ -118,7 +117,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let myList = [];
+  availableItems.forEach(obj => {
+    if (obj.available === true){
+      myList.push(obj.name);
+    }
+  });
+  return myList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +141,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let outPut = [];
+  arr.forEach(num => {
+    if (num % 3 === 0 && num % 5 === 0){
+      outPut.push('Fizz Buzz');
+    } else if (num % 5 === 0){
+      outPut.push('Buzz');
+    } else if (num % 3 === 0){
+      outPut.push('Fizz');
+    } else {
+      outPut.push(num);
+    }
+  });
+  return outPut;
 };
 
 /* ------------------------------------------------------------------------------------------------
