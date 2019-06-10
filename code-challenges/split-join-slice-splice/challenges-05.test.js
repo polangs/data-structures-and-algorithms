@@ -31,9 +31,11 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-arr.split(0,5)({
-  arr
-}
+  arr.split(0,5){
+    
+
+  }
+  return wordsToCharList();
 };
 
 
