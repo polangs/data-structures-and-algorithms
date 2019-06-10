@@ -30,15 +30,8 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  arr.split(0,5){
-    
-
-  }
-  return wordsToCharList();
-};
-
-
+const wordsToCharList = (arr) => 
+  arr.split('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -82,9 +75,9 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let itemName = [];
+  recipe.ingredients.forEach(element => itemName.push(element.slice((element.indexOf(' ', 3)) + 1)));
+  return itemName;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,7 +90,8 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(element => 
+    result.push(element.split(' ').splice(2,3).join(' ')));
   return result;
 };
 
@@ -113,7 +107,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(element => {
+    // let verbs = element.split(' ');
+    // let myArr = verbs.slice ('0');
+    // result.push(myArr.join(' '));
+    result.push(element.split(' ').slice(0,1).join(' '));
+  });
   return result;
 };
 
@@ -222,27 +221,27 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return a list of foods', () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
@@ -295,3 +294,8 @@ xdescribe('Testing challenge 10', () => {
     expect(extractVowels('The quick brown fox')).toStrictEqual(['Th qck brwn fx', 'eioou']);
   });
 });
+function newFunction() {
+  returns;
+  wordsToCharList;
+}
+
