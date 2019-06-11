@@ -1,5 +1,7 @@
 'use strict';
 
+import { booleanLiteral } from "@babel/types";
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -79,7 +81,7 @@ const getHouses = (arr) => {
   return houses;
 };
 
-
+//////did this with JBs help
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -94,8 +96,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-};
+  let arrData = []
+  let char;
+  if{
+    Object.values((arr)(element[index][index2]).forEach(character));
+    char === true;
+  }else
+  char === false;
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -183,7 +192,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
