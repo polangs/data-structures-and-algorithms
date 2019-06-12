@@ -13,10 +13,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 const forLoopTwoToThe = (arr) => {
   let arrInt = [];
   for ( let i = 0; i < arr.length; i++){
-    arrInt.push(Math.pow(2,arr[i]))
+    arrInt.push(2 ** arr[i]);
   }
   return arrInt;
 };
+
+    // arrInt.push(Math.pow(2,arr[i]))
+    //replaced Math.pow (i had a hard time switching it to forEach)to ** JS arithmetic operators fr w3schools this operand (**) Calculates the base to the exponent power, that is, base exponent.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -26,9 +29,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   let output = [];
-  arr.forEach((item) => 
-  return arrInt;
+  arr.forEach(element => output.push(2 ** element));
+  return output;
 };
+
+//forEach(element())
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -36,7 +41,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  return arr.map(element => 2 ** element);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,7 +55,8 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  let charCodeAt = [];
+return String.charcode(arr => ** element)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -193,7 +199,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -204,7 +210,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
