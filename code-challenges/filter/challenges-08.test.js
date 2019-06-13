@@ -25,12 +25,16 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  let onlyVowels = [];
-   arr.filter (function (val){
-    return onlyVowels === /[aeiou]+/;
-  };
+  let vowels = arr.filter(str => /^[aeiou]$/i.test(str));
+  return vowels;
 };
 
+
+//stack overflow hen, /^[aeiou]/i means:
+// ^ matches the start of the string.
+// [aeiou] matches any of the characters inside the square brackets, a single time.
+// i is a case-insensitive modifier.
+// !!!! I couldnt figure out what is wrong on this condition --// 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
