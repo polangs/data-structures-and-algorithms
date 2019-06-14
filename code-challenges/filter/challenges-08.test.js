@@ -25,7 +25,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  let vowels = arr.filter(str => /^[aeiou]$/i.test(str));
+  let vowels = arr.filter(str => /[aeiou]/i.exec(str));
   return vowels;
 };
 
@@ -34,6 +34,7 @@ const filterStringsWithVowels = (arr) => {
 // ^ matches the start of the string.
 // [aeiou] matches any of the characters inside the square brackets, a single time.
 // i is a case-insensitive modifier.
+
 // !!!! I couldnt figure out what is wrong on this condition --// 
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,8 +46,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  let notIncluded = forbiddenValues.filter(lastItem => !arr.includes(lastItem.val));
+  return notIncluded;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -201,7 +204,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   const firstNums = [1, 2, 3];
   const secondNums = [1, 2, 3, 4];
 
