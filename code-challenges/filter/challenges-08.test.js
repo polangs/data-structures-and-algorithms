@@ -12,7 +12,7 @@ const oddValues = (arr) => {
   let odds = arr.filter( n => n % 2);
   return odds;
 };
-// stack overflow guide 
+// stack overflow guide
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -35,7 +35,7 @@ const filterStringsWithVowels = (arr) => {
 // [aeiou] matches any of the characters inside the square brackets, a single time.
 // i is a case-insensitive modifier.
 
-// !!!! I couldnt figure out what is wrong on this condition --// 
+// !!!! I couldnt figure out what is wrong on this condition --//
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -46,9 +46,13 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  let notIncluded = forbiddenValues.filter(lastItem => !arr.includes(lastItem.val));
+  let notIncluded = arr.filter(values => {
+    if (!forbiddenValues.includes(values));
+    return values;
+  });
   return notIncluded;
-};
+}
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,7 +95,10 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  let myAnswer = arr.filter(value => {
+    if ( value <= minBaseStat);
+    return(myAnswer);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -228,7 +235,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
